@@ -33,6 +33,8 @@ function App() {
 
 
     const choiceRsp = (rsp) => {
+        setUserSelect(null);
+        setComSelect(null);
         setUserSelect(choice[rsp]);
         let computerChoice = randomChoice();
         setComSelect(choice[computerChoice]);
