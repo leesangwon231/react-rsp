@@ -1,19 +1,30 @@
-@media  (max-width: 600px) {
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+@media  (max-width: 600px) {
+    html,body{
+        margin: 0;
+        padding: 0;
+
+    }
 
     .buttonArea{
         margin-top : 20px;
-        gap : 20px;
     }
 
     .box{
         border : 1px solid black;
-        width: 180px;
+        width: 130px;
         height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-size: 10px;
 
     }
 
@@ -76,12 +87,7 @@
     }
 }
 
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .main{
     display: flex;
