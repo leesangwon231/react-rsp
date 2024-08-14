@@ -1,12 +1,20 @@
 
 
+
 .box{
     border : 1px solid black;
     width: 500px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .item-img{
     width: 400px;
+    height: 400px;
 }
 
 
@@ -14,4 +22,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+}
+
+.win {
+    border: 5px solid green;
+    color: green;
+}
+.lose {
+    border: 5px solid red;
+    color: red;
+}
+.tie {
+    border: 5px solid black;
+    color: black;
 }

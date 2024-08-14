@@ -11,6 +11,8 @@ import {useState} from "react";
 // 6. 테두리 색깔 변경 (이기면 - 초록, 지면 - 빨강 , 비기면 - 검정)
 function App() {
     const [userSelect,setUserSelect] = useState(null);
+    const [comSelect,setComSelect] = useState(null);
+    const [result,setResult] = useState("");
 
     const choice = {
         rock : {
@@ -28,15 +30,39 @@ function App() {
     }
 
 
+
+
     const choiceRsp = (rsp) => {
-        setUserSelect(choice[rsp])
+        setUserSelect(choice[rsp]);
+        let computerChoice = randomChoice();
+        setComSelect(choice[computerChoice]);
+        setResult(judgement(choice[rsp],choice[computerChoice]));
+    }
+
+    const randomChoice = () => {
+        let itemArray = Object.keys(choice);
+        let randomItem = itemArray[Math.floor(Math.random()*itemArray.length)] ;
+        return randomItem;
+    }
+
+    const judgement = (userChoice, comChoice) => {
+
+        if(userChoice.name === comChoice.name){
+            return "tie"
+        }else if(userChoice.name === "rock"){
+           return comChoice.name === "sissor" ? "win" : "lose";
+        }else if(userChoice.name === "sissor"){
+            return comChoice.name === "paper" ? "win" : "lose";
+        }else if(userChoice.name === "paper"){
+            return comChoice.name === "rock" ? "win" : "lose";
+        }
     }
 
   return (
-      <div>
+      <div className={"wrapper"}>
           <div className="main">
-              <Box title="You" item = {userSelect}/>
-              {/*<Box title="computer"/>*/}
+              <Box title="You" item = {userSelect} result={result}/>
+             <Box title="Computer" item = {comSelect} result={result}/>
           </div>
           <div className={"main"}>
               <button onClick={() => choiceRsp("sissor")}>가위</button>
