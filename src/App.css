@@ -100,10 +100,13 @@
 .win {
     border: 5px solid green;
     color: green;
+
 }
 .lose {
     border: 5px solid red;
     color: red;
+    transform: scale(1.2%);
+    transition: 1.5s;
 }
 .tie {
     border: 5px solid black;
