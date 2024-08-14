@@ -6,9 +6,16 @@ const Box = ({title,item,result}) => {
 
     if(title === "Computer" && result !== ""){
         results = result === "win" ? "lose" : "win"
+        if(result === "tie"){
+            results = "tie";
+        }
     }else{
         results = result
     }
+
+
+
+    console.log(results);
 
     return (
     <div className={`box ${results}`}>
