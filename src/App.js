@@ -62,9 +62,9 @@ function App() {
       <div className={"wrapper"}>
           <div className="main">
               <Box title="You" item = {userSelect} result={result}/>
-             <Box title="Computer" item = {comSelect} result={result}/>
+              <Box title="Computer" item = {comSelect} result={result}/>
           </div>
-          <div className={"main"}>
+          <div className={"buttonArea"}>
               <button onClick={() => choiceRsp("sissor")}>가위</button>
               <button onClick={() => choiceRsp("rock")}>바위</button>
               <button onClick={() => choiceRsp("paper")}>보</button>
