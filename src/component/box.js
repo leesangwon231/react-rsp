@@ -15,8 +15,6 @@ const Box = ({title,item,result}) => {
 
 
 
-    console.log(results);
-
     return (
     <div className={`box ${results}`}>
         <h1>{title}</h1>
